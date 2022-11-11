@@ -1,0 +1,18 @@
+URL: /
+Timestamp: Fri Nov 11 2022 14:09:49 GMT+0100 (Central European Standard Time)
+
+URL: /favicon.ico
+Timestamp: Fri Nov 11 2022 14:09:49 GMT+0100 (Central European Standard Time)
+
+URL: /documentation
+Timestamp: Fri Nov 11 2022 14:10:01 GMT+0100 (Central European Standard Time)
+
+URL: /favicon.ico
+Timestamp: Fri Nov 11 2022 14:10:01 GMT+0100 (Central European Standard Time)
+
+URL: /bruna
+Timestamp: Fri Nov 11 2022 14:10:15 GMT+0100 (Central European Standard Time)
+
+URL: /favicon.ico
+Timestamp: Fri Nov 11 2022 14:10:15 GMT+0100 (Central European Standard Time)
+
