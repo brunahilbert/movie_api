@@ -4,14 +4,171 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>myFlix</title>
+    <title>Documentation</title>
 </head>
 
 <body>
-    <h1>myFlix</h1>
-    <h3>
-        This API provide access to information about different movies, directors, and genres.
-    </h3>
+
+    <header>
+        <h1>Movie API Documentation</h1>
+    </header>
+
+    <div>
+        <h1>myFlix</h1>
+        <p>
+            This API provide access to information about different movies, directors, and genres.<br>
+            Users will be able to sign up, update their personal information, and create a list of their favorite movies.
+        </p>
+        <h2>
+            Features:
+        </h2>
+        <ul>
+            <li>Return a list of ALL movies to the user;</li>
+            <li>Return data (description, genre, director, image URL) about a single movie by title to the user;</li>
+            <li>Return data about a genre (description) by genre name;</li>
+            <li>Return data about a director (bio, birth year, death year) by name;</li>
+            <li>Allow new users to register;</li>
+            <li>Allow users to update their user name;</li>
+            <li>Allow users to add a movie to their list of favorites movies;</li>
+            <li>Allow users to remove a movie from their list of favorites movies;</li>
+            <li>Allow existing users to deregister.</li>
+        </ul>
+    </div>
+
+    <div class="documentation-table">
+        <h1>API Endpoints</h1>
+        <table class="endpoints-table">
+            <thead>
+                <tr>
+                    <th class="endpoints__cell">Request</th>
+                    <th class="endpoints__cell">URL</th>
+                    <th class="endpoints__cell">HTTP Method</th>
+                    <th class="endpoints__cell">Request body data format</th>
+                    <th class="endpoints__cell">Response body data format</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="endpoints__cell">Get all movies</td>
+                    <td class="endpoints__cell">/movies</td>
+                    <td class="endpoints__cell">GET</td>
+                    <td class="endpoints__cell">None</td>
+                    <td class="endpoints__cell">A JSON object holding data about all the movies</td>
+                </tr>
+                <tr>
+                    <td class="endpoints__cell">Get data about a single movie by a movie's title</td>
+                    <td class="endpoints__cell">/movies/[Title]</td>
+                    <td class="endpoints__cell">GET</td>
+                    <td class="endpoints__cell">None</td>
+                    <td class="endpoints__cell">A JSON object holding data about a single movie (name, year, duration, description, genre and director)<br>
+                        <code> 
+                            {<br>
+                            "title": "Coco",<br>
+                            "year": 2017,<br>
+                            "duration": 109,<br>
+                            "description": "",<br>
+                            "genre": {<br>
+                            "name": "kids & family",<br>
+                            "description": ""<br>
+                            },<br>
+                            "director": {<br>
+                            "name": "Lee Unkrich",<br>
+                            "birthday": "08.08.1967",<br>
+                            "biography": ""<br>
+                            } <br>
+                            } <br>
+                        </code>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="endpoints__cell">Get genre Information by genre's name</td>
+                    <td class="endpoints__cell">/movies/genre/[genreName]</td>
+                    <td class="endpoints__cell">GET</td>
+                    <td class="endpoints__cell">None</td>
+                    <td class="endpoints__cell">A JSON object holding data about a single genre (name, description)<br>
+                        <code>
+                            {<br>
+                            "name": "kids & family",<br>
+                            "description": "Kids & Family films aims to appeal not only to children, but …"<br>
+                            }<br>
+                        </code>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="endpoints__cell">Get data about a director by a director's name</td>
+                    <td class="endpoints__cell">/movies/director/[directorName]</td>
+                    <td class="endpoints__cell">GET</td>
+                    <td class="endpoints__cell">None</td>
+                    <td class="endpoints__cell">A JSON object holding data about a single director (name, biography, birth)<br>
+                        <code>
+                            {<br>
+                            "name": "Lee Unkrich",<br>
+                            "birthday": "08.08.1967",<br>
+                            "biography": ""<br>
+                            }<br>
+                        </code>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="endpoints__cell">Add new user</td>
+                    <td class="endpoints__cell">/user</td>
+                    <td class="endpoints__cell">POST</td>
+                    <td class="endpoints__cell">A JSON object holding data about the user to add, structured like:<br>
+                        <code>
+                            {<br>
+                            "name": "Paula",<br>
+                            "favoriteMovies": []<br>
+                            }<br>
+                        </code>
+                    </td>
+                    <td class="endpoints__cell">A JSON object holding data about the user that was added, including an ID:<br>
+                        <code>
+                            {<br>
+                            "name": "Paula",<br>
+                            "favoriteMovies": [],<br>
+                            "id": "356a5bfa-cf03-444f-8659-0b063f524fbd"<br>
+                            }<br>
+                        </code>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="endpoints__cell">Update user's name by ID</td>
+                    <td class="endpoints__cell">/user/[id]</td>
+                    <td class="endpoints__cell">PUT</td>
+                    <td class="endpoints__cell">A JSON object holding the new data about the user, structured like:<br>
+                        <code>
+                            {<br>
+                            "name": "Mary"<br>
+                            }<br> 
+                        </code>
+                    </td>
+                    <td class="endpoints__cell">A text message indicating the new user name that was updated</td>
+                </tr>
+                <tr>
+                    <td class="endpoints__cell">Add a favorite movie to the favorite movies list by ID and movie title</td>
+                    <td class="endpoints__cell">/user/[id]/[movieTitle]</td>
+                    <td class="endpoints__cell">POST</td>
+                    <td class="endpoints__cell">None</td>
+                    <td class="endpoints__cell">A text message indicating that the movie was added to the favorite movies list</td>
+                </tr>
+                <tr>
+                    <td class="endpoints__cell">Remove a favorite movie to the favorite movies list by ID and movie title</td>
+                    <td class="endpoints__cell">/user/[id]/[movieTitle]</td>
+                    <td class="endpoints__cell">DELETE</td>
+                    <td class="endpoints__cell">None</td>
+                    <td class="endpoints__cell">A text message indicating that the movie was removed from the favorite movies list</td>
+                </tr>
+                <tr>
+                    <td class="endpoints__cell">Deregister a user by id</td>
+                    <td class="endpoints__cell">/user/[id]</td>
+                    <td class="endpoints__cell">DELETE</td>
+                    <td class="endpoints__cell">None</td>
+                    <td class="endpoints__cell">A text message indicating that the user was deleted</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
 </body>
 
 </html>
