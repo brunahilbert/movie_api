@@ -17,7 +17,8 @@
         <h1>myFlix</h1>
         <p>
             This API provide access to information about different movies, directors, and genres.<br>
-            Users will be able to sign up, update their personal information, and create a list of their favorite movies.
+            Users will be able to sign up, update their personal information, and create a list of their favorite
+            movies.
         </p>
         <h2>
             Features:
@@ -61,36 +62,43 @@
                     <td class="endpoints__cell">GET</td>
                     <td class="endpoints__cell">None</td>
                     <td class="endpoints__cell">A JSON object holding data about a single movie (name, year, duration, description, genre and director)<br>
-                        <code> 
+                        <code>
                             {<br>
-                            "title": "Coco",<br>
-                            "year": 2017,<br>
-                            "duration": 109,<br>
-                            "description": "",<br>
-                            "genre": {<br>
-                            "name": "kids & family",<br>
-                            "description": ""<br>
+                            "Genre": {<br>
+                            "Name": "Kids & Family",<br>
+                            "Description": "Kids & Family films aims to appeal not only to children, but ..."<br>
                             },<br>
-                            "director": {<br>
-                            "name": "Lee Unkrich",<br>
-                            "birthday": "08.08.1967",<br>
-                            "biography": ""<br>
-                            } <br>
-                            } <br>
+                            "Director": {<br>
+                            "Name": "Lee Unkrich",<br>
+                            "Bio": "Lee Edward Unkrich is an American retired film director.",<br>
+                            "Birth": "1967",<br>
+                            "Death": ""<br>
+                            },<br>
+                            "Actors": [],<br>
+                            "_id": "637e4756fd2173cf2c109e6a",<br>
+                            "Title": "Coco",<br>
+                            "releaseYear": 2017,<br>
+                            "Duration": 109,<br>
+                            "Description": "Despite his family's generations-old ban on music, young Miguel ...",<br>
+                            "ImagePath": "https://coco.jpg",<br>
+                            "Featured": true<br>
+                            }<br>
                         </code>
                     </td>
                 </tr>
                 <tr>
-                    <td class="endpoints__cell">Get genre Information by genre's name</td>
+                    <td class="endpoints__cell">Get genre information by genre's name</td>
                     <td class="endpoints__cell">/movies/genre/[genreName]</td>
                     <td class="endpoints__cell">GET</td>
                     <td class="endpoints__cell">None</td>
                     <td class="endpoints__cell">A JSON object holding data about a single genre (name, description)<br>
                         <code>
                             {<br>
-                            "name": "kids & family",<br>
-                            "description": "Kids & Family films aims to appeal not only to children, but …"<br>
+                            "Genre": {<br>
+                            "Name": "kids & family",<br>
+                            "Description": "Kids & Family films aims to appeal not only to children, but …"<br>
                             }<br>
+                            "_id": "637e47b8fd2173cf2c109e6c"<br>
                         </code>
                     </td>
                 </tr>
@@ -99,14 +107,43 @@
                     <td class="endpoints__cell">/movies/director/[directorName]</td>
                     <td class="endpoints__cell">GET</td>
                     <td class="endpoints__cell">None</td>
-                    <td class="endpoints__cell">A JSON object holding data about a single director (name, biography, birth)<br>
+                    <td class="endpoints__cell">A JSON object holding data about a single director (name, biography, birth, death)<br>
                         <code>
                             {<br>
-                            "name": "Lee Unkrich",<br>
-                            "birthday": "08.08.1967",<br>
-                            "biography": ""<br>
+                            "Director": {<br>
+                            "Name": "Lee Unkrich",<br>
+                            "Bio": "",<br>
+                            "Birth": "1967",<br>
+                            "Death": ""<br>
                             }<br>
+                            "_id": "637e4756fd2173cf2c109e6a"<br>
                         </code>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="endpoints__cell">Get all users</td>
+                    <td class="endpoints__cell">/users</td>
+                    <td class="endpoints__cell">GET</td>
+                    <td class="endpoints__cell">None</td>
+                    <td class="endpoints__cell">A JSON object holding data about all users</td>
+                </tr>
+                <tr>
+                    <td class="endpoints__cell">Get user by username</td>
+                    <td class="endpoints__cell">/users/[UserName]</td>
+                    <td class="endpoints__cell">GET</td>
+                    <td class="endpoints__cell">None</td>
+                    <td class="endpoints__cell">A JSON object holding data about a single user <br>
+                        <code>
+                        {<br>
+                        "_id": "6380f7bd1df76eb013c9bec2",<br>
+                        "UserName": "Paulinha",<br>
+                        "Password": "paulinha1234",<br>
+                        "Email": "paulinha@gmail.com",<br>
+                        "FavoriteMovies": ["637e4829fd2173cf2c109e6f"],<br>
+                        "__v": 0,<br>
+                        "Birthday": "2000-09-11T00:00:00.000Z"<br>
+                        }<br>
+                    </code>
                     </td>
                 </tr>
                 <tr>
@@ -116,51 +153,59 @@
                     <td class="endpoints__cell">A JSON object holding data about the user to add, structured like:<br>
                         <code>
                             {<br>
-                            "name": "Paula",<br>
-                            "favoriteMovies": []<br>
+                            "UserName" : "Bruna Hilbert",<br>
+                            "Password" : "bruna123",<br>
+                            "Email" : "bruna@gmail.com",<br>
+                            "Birthday" : ""<br>
                             }<br>
                         </code>
                     </td>
                     <td class="endpoints__cell">A JSON object holding data about the user that was added, including an ID:<br>
                         <code>
                             {<br>
-                            "name": "Paula",<br>
-                            "favoriteMovies": [],<br>
-                            "id": "356a5bfa-cf03-444f-8659-0b063f524fbd"<br>
+                            "UserName": "Bruna Hilbert",<br>
+                            "Password": "bruna123",<br>
+                            "Email": "bruna@gmail.com",<br>
+                            "FavoriteMovies": [],<br>
+                            "_id": "6380f7d21df76eb013c9bec5",<br>
+                            "__v": 0<br>
                             }<br>
                         </code>
                     </td>
                 </tr>
                 <tr>
-                    <td class="endpoints__cell">Update user's name by ID</td>
-                    <td class="endpoints__cell">/user/[id]</td>
+                    <td class="endpoints__cell">Update user information by username</td>
+                    <td class="endpoints__cell">/users/[UserName]</td>
                     <td class="endpoints__cell">PUT</td>
                     <td class="endpoints__cell">A JSON object holding the new data about the user, structured like:<br>
                         <code>
                             {<br>
-                            "name": "Mary"<br>
+                            "UserName" : "Mariazinha",<br>
+                            "Password" : "mariazinha1234",<br>
+                            "Email" : "mariazinha@gmail.com",<br>
+                            "Birthday" : "2000-09-11T00:00:00.000Z"<br>
                             }<br> 
                         </code>
                     </td>
-                    <td class="endpoints__cell">A text message indicating the new user name that was updated</td>
+                    <td class="endpoints__cell">A text message indicating that the user information was updated</td>
                 </tr>
                 <tr>
-                    <td class="endpoints__cell">Add a favorite movie to the favorite movies list by ID and movie title</td>
-                    <td class="endpoints__cell">/user/[id]/[movieTitle]</td>
+                    <td class="endpoints__cell">Add a movie to the favorite movies list by username and movie ID</td>
+                    <td class="endpoints__cell">/user/[UserName]/movies/[MovieID]</td>
                     <td class="endpoints__cell">POST</td>
                     <td class="endpoints__cell">None</td>
-                    <td class="endpoints__cell">A text message indicating that the movie was added to the favorite movies list</td>
+                    <td class="endpoints__cell">A text message indicating that a new movie was added to the favorite movies list</td>
                 </tr>
                 <tr>
-                    <td class="endpoints__cell">Remove a favorite movie to the favorite movies list by ID and movie title</td>
-                    <td class="endpoints__cell">/user/[id]/[movieTitle]</td>
+                    <td class="endpoints__cell">Remove a movie to the favorite movies list by username and movie ID</td>
+                    <td class="endpoints__cell">/user/[UserName]/movies/[MovieID]</td>
                     <td class="endpoints__cell">DELETE</td>
                     <td class="endpoints__cell">None</td>
                     <td class="endpoints__cell">A text message indicating that the movie was removed from the favorite movies list</td>
                 </tr>
                 <tr>
-                    <td class="endpoints__cell">Deregister a user by id</td>
-                    <td class="endpoints__cell">/user/[id]</td>
+                    <td class="endpoints__cell">Deregister a user by username</td>
+                    <td class="endpoints__cell">/users/[UserName]</td>
                     <td class="endpoints__cell">DELETE</td>
                     <td class="endpoints__cell">None</td>
                     <td class="endpoints__cell">A text message indicating that the user was deleted</td>
@@ -168,7 +213,7 @@
             </tbody>
         </table>
     </div>
-    
+
 </body>
 
 </html>
