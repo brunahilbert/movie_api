@@ -243,7 +243,7 @@ app.put(
 // ========== GET REQUESTS (read) =============================================================================
 
 // return root
-app.get('/', passport.authenticate('jwt', { session: false }), (req, res) => {
+app.get('/', (req, res) => {
   res.send('Welcome to your Flix!');
 });
 
