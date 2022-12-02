@@ -244,7 +244,7 @@ app.put(
 
 // return root
 app.get('/', (req, res) => {
-  res.send('Welcome to your Flix!');
+  res.send('Welcome to your Flix! :)');
 });
 
 // return documentation.html
