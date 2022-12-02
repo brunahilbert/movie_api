@@ -244,7 +244,7 @@ app.put(
 
 // return root
 app.get('/', (req, res) => {
-  res.send('Welcome to your Flix! :)');
+  res.send('Welcome to your MovieBox! :)');
 });
 
 // return documentation.html
@@ -326,7 +326,7 @@ app.get(
   (req, res) => {
     Users.find()
       .then((users) => {
-        res.status(201).json(users);
+        res.status(201).json(users.);
       })
       .catch((err) => {
         console.error(err);
