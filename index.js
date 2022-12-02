@@ -326,7 +326,7 @@ app.get(
   (req, res) => {
     Users.find()
       .then((users) => {
-        res.status(201).json(users.);
+        res.status(201).json(users);
       })
       .catch((err) => {
         console.error(err);
