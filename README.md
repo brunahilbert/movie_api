@@ -9,9 +9,9 @@ The objective of this project is to build the server-side component of a “movi
 -   Return data about a genre (description) by name/title (e.g., “Thriller”)
 -   Return data about a director (bio, birth year, death year) by name
 -   Allow new users to register
--   Allow users to update their user info (username, password, email, date of birth)
--   Allow users to add a movie to their list of favorites
--   Allow users to remove a movie from their list of favorites
+-   Allow users to update their user info (username, password, email, birthday)
+-   Allow users to add a movie to their list of favorite movies
+-   Allow users to remove a movie from their list of favorite movies 
 -   Allow existing users to deregister
 
 ### Technical Dependencies:
