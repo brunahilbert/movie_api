@@ -54,8 +54,7 @@ app.use(morgan('combined', { stream: accessLogStream }));
 // routes all requests for static files to the 'public' folder
 app.use(express.static('public'));
 
-// mongoose.connect('mongodb://127.0.0.1:27017/test', {
-mongoose.connect(process.env.CONNECTION_URI, {
+mongoose.connect(process.env.CONNECTION_URI || 'mongodb://127.0.0.1:27017/test', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
