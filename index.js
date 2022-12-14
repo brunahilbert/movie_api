@@ -54,10 +54,13 @@ app.use(morgan('combined', { stream: accessLogStream }));
 // routes all requests for static files to the 'public' folder
 app.use(express.static('public'));
 
-mongoose.connect(process.env.CONNECTION_URI || 'mongodb://127.0.0.1:27017/test', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect(
+  process.env.CONNECTION_URI || 'mongodb://127.0.0.1:27017/test',
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  }
+);
 
 // ========== POST REQUESTS (create) ==========================================================================
 
@@ -252,20 +255,16 @@ app.get('/documentation', (req, res) => {
 });
 
 // get all movies
-app.get(
-  '/movies',
-  passport.authenticate('jwt', { session: false }),
-  (req, res) => {
-    Movies.find()
-      .then((movies) => {
-        res.status(201).json(movies);
-      })
-      .catch((err) => {
-        console.error(err);
-        res.status(500).send('Error: ' + err);
-      });
-  }
-);
+app.get('/movies', (req, res) => {
+  Movies.find()
+    .then((movies) => {
+      res.status(201).json(movies);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send('Error: ' + err);
+    });
+});
 
 // get movie by title
 app.get(
