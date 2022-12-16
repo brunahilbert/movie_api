@@ -19,7 +19,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 const cors = require('cors');
 // app.use(cors());
-let allowedOrigins = ['http://localhost:8080', 'http://localhost:1234', 'http://testsite.com'];
+let allowedOrigins = [
+  'http://localhost:8080',
+  'http://localhost:1234',
+  'http://testsite.com',
+];
 
 app.use(
   cors({
@@ -255,16 +259,20 @@ app.get('/documentation', (req, res) => {
 });
 
 // get all movies
-app.get('/movies', (req, res) => {
-  Movies.find()
-    .then((movies) => {
-      res.status(201).json(movies);
-    })
-    .catch((err) => {
-      console.error(err);
-      res.status(500).send('Error: ' + err);
-    });
-});
+app.get(
+  '/movies',
+  passport.authenticate('jwt', { session: false }),
+  (req, res) => {
+    Movies.find()
+      .then((movies) => {
+        res.status(201).json(movies);
+      })
+      .catch((err) => {
+        console.error(err);
+        res.status(500).send('Error: ' + err);
+      });
+  }
+);
 
 // get movie by title
 app.get(
