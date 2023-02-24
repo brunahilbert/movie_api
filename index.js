@@ -23,7 +23,7 @@ let allowedOrigins = [
   'http://localhost:8080',
   'http://localhost:1234',
   'http://testsite.com',
-  'http://mymoviebox.netlify.app'
+  'https://mymoviebox.netlify.app'
 ];
 
 app.use(
