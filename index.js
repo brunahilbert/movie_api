@@ -24,7 +24,8 @@ let allowedOrigins = [
   'http://localhost:1234',
   'http://testsite.com',
   'https://mymoviebox.netlify.app',
-  'https://mymovieboxx.netlify.app'
+  'https://mymovieboxx.netlify.app',
+  'https://brunahilbert.github.io/myMovieBox-angular-client/'
 ];
 
 app.use(
