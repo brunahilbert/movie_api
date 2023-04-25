@@ -25,7 +25,7 @@ let allowedOrigins = [
   'http://testsite.com',
   'https://mymoviebox.netlify.app',
   'https://mymovieboxx.netlify.app',
-  'https://brunahilbert.github.io'
+  'https://brunahilbert.github.io/myMovieBox-angular-client/'
 
 app.use(
   cors({
