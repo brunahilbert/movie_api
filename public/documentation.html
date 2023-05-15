@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>Documentation</title>
-    <link rel="stylesheet" type="text/css" href="../css/styles.css">
+    <link rel="stylesheet" type="text/css" href="./css/styles.css">
 </head>
 
 <body>
@@ -15,7 +15,6 @@
     </header>
 
     <div>
-        <h1>myMovieBox</h1>
         <p>
             This API provide access to information about different movies, directors, and genres.<br>
             Users will be able to sign up, update their personal information, and create a list of their favorite
@@ -62,7 +61,8 @@
                     <td class="endpoints__cell">/movies/[Title]</td>
                     <td class="endpoints__cell">GET</td>
                     <td class="endpoints__cell">None</td>
-                    <td class="endpoints__cell">A JSON object holding data about a single movie (name, year, duration, description, genre and director)<br>
+                    <td class="endpoints__cell">A JSON object holding data about a single movie (name, year, duration,
+                        description, genre and director)<br>
                         <code>
                             {<br>
                             "Genre": {<br>
@@ -108,7 +108,8 @@
                     <td class="endpoints__cell">/movies/director/[directorName]</td>
                     <td class="endpoints__cell">GET</td>
                     <td class="endpoints__cell">None</td>
-                    <td class="endpoints__cell">A JSON object holding data about a single director (name, biography, birth, death)<br>
+                    <td class="endpoints__cell">A JSON object holding data about a single director (name, biography,
+                        birth, death)<br>
                         <code>
                             {<br>
                             "Director": {<br>
@@ -130,14 +131,14 @@
                 </tr>
                 <tr>
                     <td class="endpoints__cell">Get user by username</td>
-                    <td class="endpoints__cell">/users/[UserName]</td>
+                    <td class="endpoints__cell">/users/[Username]</td>
                     <td class="endpoints__cell">GET</td>
                     <td class="endpoints__cell">None</td>
                     <td class="endpoints__cell">A JSON object holding data about a single user <br>
                         <code>
                         {<br>
                         "_id": "6380f7bd1df76eb013c9bec2",<br>
-                        "UserName": "Paulinha",<br>
+                        "Username": "Paulinha",<br>
                         "Password": "paulinha1234",<br>
                         "Email": "paulinha@gmail.com",<br>
                         "FavoriteMovies": ["637e4829fd2173cf2c109e6f"],<br>
@@ -154,17 +155,18 @@
                     <td class="endpoints__cell">A JSON object holding data about the user to add, structured like:<br>
                         <code>
                             {<br>
-                            "UserName" : "Bruna Hilbert",<br>
+                            "Username" : "Bruna Hilbert",<br>
                             "Password" : "bruna123",<br>
                             "Email" : "bruna@gmail.com",<br>
                             "Birthday" : ""<br>
                             }<br>
                         </code>
                     </td>
-                    <td class="endpoints__cell">A JSON object holding data about the user that was added, including an ID:<br>
+                    <td class="endpoints__cell">A JSON object holding data about the user that was added, including an
+                        ID:<br>
                         <code>
                             {<br>
-                            "UserName": "Bruna Hilbert",<br>
+                            "Username": "Bruna Hilbert",<br>
                             "Password": "bruna123",<br>
                             "Email": "bruna@gmail.com",<br>
                             "FavoriteMovies": [],<br>
@@ -176,12 +178,12 @@
                 </tr>
                 <tr>
                     <td class="endpoints__cell">Update user information by username</td>
-                    <td class="endpoints__cell">/users/[UserName]</td>
+                    <td class="endpoints__cell">/users/[Username]</td>
                     <td class="endpoints__cell">PUT</td>
                     <td class="endpoints__cell">A JSON object holding the new data about the user, structured like:<br>
                         <code>
                             {<br>
-                            "UserName" : "Mariazinha",<br>
+                            "Username" : "Mariazinha",<br>
                             "Password" : "mariazinha1234",<br>
                             "Email" : "mariazinha@gmail.com",<br>
                             "Birthday" : "2000-09-11T00:00:00.000Z"<br>
@@ -192,21 +194,23 @@
                 </tr>
                 <tr>
                     <td class="endpoints__cell">Add a movie to the favorite movies list by username and movie ID</td>
-                    <td class="endpoints__cell">/user/[UserName]/movies/[MovieID]</td>
+                    <td class="endpoints__cell">/user/[Username]/movies/[MovieID]</td>
                     <td class="endpoints__cell">POST</td>
                     <td class="endpoints__cell">None</td>
-                    <td class="endpoints__cell">A text message indicating that a new movie was added to the favorite movies list</td>
+                    <td class="endpoints__cell">A text message indicating that a new movie was added to the favorite
+                        movies list</td>
                 </tr>
                 <tr>
                     <td class="endpoints__cell">Remove a movie to the favorite movies list by username and movie ID</td>
-                    <td class="endpoints__cell">/user/[UserName]/movies/[MovieID]</td>
+                    <td class="endpoints__cell">/user/[Username]/movies/[MovieID]</td>
                     <td class="endpoints__cell">DELETE</td>
                     <td class="endpoints__cell">None</td>
-                    <td class="endpoints__cell">A text message indicating that the movie was removed from the favorite movies list</td>
+                    <td class="endpoints__cell">A text message indicating that the movie was removed from the favorite
+                        movies list</td>
                 </tr>
                 <tr>
                     <td class="endpoints__cell">Deregister a user by username</td>
-                    <td class="endpoints__cell">/users/[UserName]</td>
+                    <td class="endpoints__cell">/users/[Username]</td>
                     <td class="endpoints__cell">DELETE</td>
                     <td class="endpoints__cell">None</td>
                     <td class="endpoints__cell">A text message indicating that the user was deleted</td>
