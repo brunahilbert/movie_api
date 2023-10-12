@@ -21,6 +21,6 @@ The objective of this project is to build the server-side component of a “movi
 - Express
 - Node.js
 
-Deployed app link:  [https://my-movie-box.herokuapp.com/](https://my-movie-box.herokuapp.com/)
+Deployed app link:  [https://my-movie-box-211a3d432647.herokuapp.com/](https://my-movie-box-211a3d432647.herokuapp.com/)
 
-Documentation:  [https://my-movie-box.herokuapp.com/documentation](https://my-movie-box.herokuapp.com/documentation)
+Documentation:  [https://my-movie-box-211a3d432647.herokuapp.com/documentation](https://my-movie-box-211a3d432647.herokuapp.com/documentation)
